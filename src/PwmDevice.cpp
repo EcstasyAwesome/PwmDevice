@@ -4,9 +4,9 @@
  * @param pin
  *        pin number that a device is connected
  * @param min
- *        min pwm level
+ *        min pwm level (from 1 to 255)
  * @param max
- *        max pwm level
+ *        max pwm level (from 1 to 255)
  */
 
 PwmDevice::PwmDevice(const uint8_t pin, const uint8_t min, const uint8_t max) {
@@ -18,7 +18,7 @@ PwmDevice::PwmDevice(const uint8_t pin, const uint8_t min, const uint8_t max) {
 
 /*
  * @param value
- *        level in pwm
+ *        level in pwm (from _min to _max)
  * @return true if a value was applied
  */
 
@@ -38,7 +38,7 @@ bool PwmDevice::setPwm(const uint8_t value) {
 
 /*
  * @param value
- *        level in percent
+ *        level in percent (from 1 to 100, but the real PWM range will be changed between _min and _max)
  * @return true if a value was applied
  */
 
